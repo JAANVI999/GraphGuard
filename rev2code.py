@@ -45,53 +45,6 @@ with open(r'C:\Users\Lenovo\Desktop\rev2\data\amazon\amazon_network.csv', 'r') a
         G.add_edge(row[0], row[1], weight = row[2])
 
 print ("Loaded")
-
-# if NETWORKNAME in ["otc", "alpha"]:
-# 	num_ratings = 21
-# else:
-# 	num_ratings = 5
-# num_iat_bins = 49
-
-# def get_timestamp_dist(node, normalize)
-#     if "U" in node[0]:
-#         edges = G.out_edges(node, data=True)
-#         ts = [edge[2]["timestamp"] for edge in edges]
-#         ts = numpy.array(sorted(ts))
-#     else:
-#         edges = G.in_edges(node, data=True)
-#         ts = [edge[2]["timestamp"] for edge in edges]
-#         ts = numpy.array(sorted(ts))
-    
-#     diff_ts = ts[1:] - ts[:-1]
-    
-#     y, x =  numpy.histogram(diff_ts, bins=numpy.logspace(0, 8, num_iat_bins+1))
-#     y[0] = sum(numpy.array(diff_ts) == 0)
-#     if sum(y)!=0.0 and normalize:
-#         y = y*1.0/sum(y)
-    
-#     # for i in range(1, len(y)):# In[1]:
-#     #     y[i] += y[i-1]
-#     return x,y
-
-
-# def get_rating_dist(node, normalize):
-#     if "U" in node[0]:
-#         edges = G.out_edges(node, data=True)
-#         ts = [int(round(10*edge[2]["weight"])) for edge in edges]
-#     else:
-#         edges = G.in_edges(node, data=True)
-#         ts = [int(round(10*edge[2]["weight"])) for edge in edges]
-   
-#     if NETWORKNAME in ["otc", "alpha"]: 
-# 	    y, x =  numpy.histogram(ts, bins=range(-10, 12))
-#     else:
-# 	    y, x =  numpy.histogram(ts, bins=range(0, 6))
-
-#     if sum(y)!=0.0 and normalize:
-#         y = y*1.0/sum(y)
-#     return x,y
-
-
 nodes = G.nodes()
 edges = G.edges(data=True)
 print (("%s network has %d nodes and %d edges") % (NETWORKNAME, len(nodes),len(edges)))
